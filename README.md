@@ -1,2 +1,2 @@
 # GeekBrainsCSharpLevel1
-Выполненные домашние задания по курсу GeekBrains "C# Уровень 1"
+Курс GeekBrains "C# Уровень 1"
