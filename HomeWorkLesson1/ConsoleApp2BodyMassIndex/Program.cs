@@ -23,8 +23,11 @@ namespace ConsoleApp2BodyMassIndex
             int weight = getIntFromConsole("Введите массу тела в килограммах"); 
             double growth = getDoubleFromConsole("Введите рост тела в метрах");
             
-            static double calcFormul(double m, double h) => m / (h*h); //расчет массы тела
-            double bodyMassIndex = calcFormul(weight, growth); //расчет массы тела
+            static double calculateFormula(double m, double h) //расчет массы тела
+            {
+                return m / (h * h);
+            }
+            double bodyMassIndex = calculateFormula(weight, growth); //расчет массы тела
             
             WriteLine($"Индекс массы тела равен: {bodyMassIndex:F1}");
             ////////////////////////////////////////////////////////////////////

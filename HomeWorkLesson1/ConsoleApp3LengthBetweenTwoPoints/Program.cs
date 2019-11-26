@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
@@ -22,11 +23,52 @@ namespace ConsoleApp3LengthBetweenTwoPoints
         {
             MyHeader(text: "Задача 3. Подсчет расстояния между двумя точками.");
             ///////////////////////////////////////////////////////////////
+            WriteLine("Пункт А. Простой расчет.");
+            WriteLine("Введите координаты первой точки:");
+            int x1 = getIntFromConsole("x1 =");
+            int y1 = getIntFromConsole("y1 =");
+            WriteLine("Введите координаты второй точки:");
+            int x2 = getIntFromConsole("x2 =");
+            int y2 = getIntFromConsole("y2 =");
 
+            double length1 =  Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)); //подсчет расстояния
 
+            WriteLine($"Расстояние между двумя точками: {length1:F2}");
+            WriteLine("Для продолжения нажмите любую кнопку ...\n");
+            ReadKey();
+            ///////////////////////////////////////////////////////////////
+            WriteLine("Пункт Б. Расчет в виде метода.");
+            WriteLine("Введите координаты первой точки:");
+            x1 = getIntFromConsole("x1 =");
+            y1 = getIntFromConsole("y1 =");
+            WriteLine("Введите координаты второй точки:");
+            x2 = getIntFromConsole("x2 =");
+            y2 = getIntFromConsole("y2 =");
 
+            double length2 = calculateFormula(x1, y1, x2, y2);
+
+            WriteLine($"Расстояние между двумы точками: {length2:F2}");
             ///////////////////////////////////////////////////////////////
             MyFooter();
+        }
+
+        private static double calculateFormula(int x1, int y1, int x2, int y2)
+        {
+            return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+        }
+
+        private static int getIntFromConsole(string message)
+        {
+            while (true)
+            {
+                Write($"{message}:>");
+                if (int.TryParse(ReadLine(), out int number))
+                {
+                    return number;
+                }
+                WriteLine("Ошибка! Неверный формат введеного целого числа.");
+                Beep(500,500);
+            }
         }
 
         /// <summary>
