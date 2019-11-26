@@ -18,8 +18,7 @@ namespace ConsoleApp1Form
         /// в) используя вывод со знаком $.
         /// Рассахатский
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             MyHeader(text: "Задача 1. Написать программу «Анкета».");
             ///////////////////////////////////////////////////////////////

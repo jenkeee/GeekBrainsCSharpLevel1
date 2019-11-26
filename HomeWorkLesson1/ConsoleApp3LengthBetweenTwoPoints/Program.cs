@@ -18,8 +18,7 @@ namespace ConsoleApp3LengthBetweenTwoPoints
         /// б) *Выполнить предыдущее задание, оформив вычисления расстояния между точками в виде метода.
         /// Рассахатский
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             MyHeader(text: "Задача 3. Подсчет расстояния между двумя точками.");
             ///////////////////////////////////////////////////////////////
@@ -30,9 +29,7 @@ namespace ConsoleApp3LengthBetweenTwoPoints
             WriteLine("Введите координаты второй точки:");
             int x2 = getIntFromConsole("x2 =");
             int y2 = getIntFromConsole("y2 =");
-
             double length1 =  Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)); //подсчет расстояния
-
             WriteLine($"Расстояние между двумя точками: {length1:F2}");
             WriteLine("Для продолжения нажмите любую кнопку ...\n");
             ReadKey();
@@ -44,19 +41,28 @@ namespace ConsoleApp3LengthBetweenTwoPoints
             WriteLine("Введите координаты второй точки:");
             x2 = getIntFromConsole("x2 =");
             y2 = getIntFromConsole("y2 =");
-
             double length2 = calculateFormula(x1, y1, x2, y2);
-
             WriteLine($"Расстояние между двумы точками: {length2:F2}");
             ///////////////////////////////////////////////////////////////
             MyFooter();
         }
-
+        /// <summary>
+        /// Формула расчета
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        /// <returns></returns>
         private static double calculateFormula(int x1, int y1, int x2, int y2)
         {
             return Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
         }
-
+        /// <summary>
+        /// Ввод целого числа с консоли
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         private static int getIntFromConsole(string message)
         {
             while (true)
@@ -70,7 +76,6 @@ namespace ConsoleApp3LengthBetweenTwoPoints
                 Beep(500,500);
             }
         }
-
         /// <summary>
         /// Вывод моей шапки консольного приложения
         /// </summary>

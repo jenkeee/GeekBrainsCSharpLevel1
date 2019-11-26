@@ -15,23 +15,26 @@ namespace ConsoleApp2BodyMassIndex
         /// (ИМТ) по формуле I=m/(h*h); где m — масса тела в килограммах, h — рост в метрах.
         /// Рассахатский
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             MyHeader(text: "Задача 2. Рассчитать и вывести индекс массы тела.");
             ////////////////////////////////////////////////////////////////////
             int weight = getIntFromConsole("Введите массу тела в килограммах"); 
             double growth = getDoubleFromConsole("Введите рост тела в метрах");
-            
-            static double calculateFormula(double m, double h) //расчет массы тела
-            {
-                return m / (h * h);
-            }
-            double bodyMassIndex = calculateFormula(weight, growth); //расчет массы тела
-            
+            double bodyMassIndex = CalculateFormula(weight, growth); //расчет массы тела
             WriteLine($"Индекс массы тела равен: {bodyMassIndex:F1}");
             ////////////////////////////////////////////////////////////////////
             MyFooter();
+        }
+        /// <summary>
+        /// Формула расчета
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="h"></param>
+        /// <returns></returns>
+        private static double CalculateFormula(double m, double h)
+        {
+            return m / (h * h);
         }
 
         /// <summary>
