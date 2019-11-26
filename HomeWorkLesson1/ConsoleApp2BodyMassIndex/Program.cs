@@ -20,14 +20,37 @@ namespace ConsoleApp2BodyMassIndex
         {
             MyHeader(text: "Задача 2. Рассчитать и вывести индекс массы тела.");
             ////////////////////////////////////////////////////////////////////
-
-
+            int weight = getIntFromConsole();
+            WriteLine(weight);
 
             ////////////////////////////////////////////////////////////////////
             MyFooter();
         }
 
-
+        /// <summary>
+        /// Ввод целого числа массы человека с консоли
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        private static int getIntFromConsole(string message = "Введите массу тела в килограммах")
+        {
+            while (true)
+            {
+                Write($"{message}:>");
+                if (int.TryParse(ReadLine(), out int number))
+                {
+                    if (number >= 20 && number <= 100)
+                    {
+                        return number;
+                    }
+                    WriteLine("Введенная масса нарушает границу нормы 20-100 кг.");
+                    Beep(300,500);
+                    continue;
+                }
+                WriteLine("Ошибка! Введен неверный формат целого числа!");
+                Beep(500,500);
+            }
+        }
         /// <summary>
         /// Вывод моей шапки консольного приложения
         /// </summary>
