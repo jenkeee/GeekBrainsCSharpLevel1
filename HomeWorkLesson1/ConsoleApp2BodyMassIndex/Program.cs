@@ -20,11 +20,40 @@ namespace ConsoleApp2BodyMassIndex
         {
             MyHeader(text: "Задача 2. Рассчитать и вывести индекс массы тела.");
             ////////////////////////////////////////////////////////////////////
-            int weight = getIntFromConsole();
-            WriteLine(weight);
-
+            int weight = getIntFromConsole("Введите массу тела в килограммах"); 
+            double growth = getDoubleFromConsole("Введите рост тела в метрах");
+            
+            static double calcFormul(double m, double h) => m / (h*h); //расчет массы тела
+            double bodyMassIndex = calcFormul(weight, growth); //расчет массы тела
+            
+            WriteLine($"Индекс массы тела равен: {bodyMassIndex:F1}");
             ////////////////////////////////////////////////////////////////////
             MyFooter();
+        }
+
+        /// <summary>
+        /// Ввод вещественного числа роста человека с консоли
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        private static double getDoubleFromConsole(string message)
+        {
+            while (true)
+            {
+                Write($"{message}:>");
+                if (double.TryParse(ReadLine(), out double number))
+                {
+                    if (number >= 0.5 && number <= 2.0)
+                    {
+                        return number;
+                    }
+                    WriteLine("Введенный рост тела нарушает границу нормы 0.5 - 2.0 метра.");
+                    Beep(300,500);
+                    continue;
+                }
+                WriteLine("Ошибка! Введен неверный формат вещественного числа!");
+                Beep(500,500);
+            }
         }
 
         /// <summary>
@@ -32,7 +61,7 @@ namespace ConsoleApp2BodyMassIndex
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        private static int getIntFromConsole(string message = "Введите массу тела в килограммах")
+        private static int getIntFromConsole(string message)
         {
             while (true)
             {
