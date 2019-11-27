@@ -11,46 +11,19 @@ namespace ConsoleApp6CreateClass
     {
         /// <summary>
         /// Задача 6.
-        /// *Создать класс с методами, которые могут пригодиться в вашей учебе (Print, Pause).
+        /// *Создать класс с методами, которые могут пригодиться в вашей учебе (Print, MyPause).
         /// Рассахатский
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            MyHeader(text: "Задача 6. Создать класс с методами, которые могут пригодиться в вашей учебе.");
+            MyToolsClass.MyHeader(text: "Задача 6. Создать класс с методами, которые могут пригодиться в вашей учебе.");
             ///////////////////////////////////////////////////////////////
-
-
+            MyToolsClass.MyPrint("Демонстрация работы класса", 24, 10);
+            MyToolsClass.MyPrint("Для продолжения нажмите любую кнопку...", 24, 12);
+            MyToolsClass.MyPause();
             ///////////////////////////////////////////////////////////////
-            MyFooter();
-        }
-
-        /// <summary>
-        /// Вывод моей шапки консольного приложения
-        /// </summary>
-        /// <param name="title"></param>
-        /// <param name="text"></param>
-        private static void MyHeader(string title = "Geekbrains. C# Уровень 1.", string text = "")
-        {
-            Title = title;
-            WindowWidth = 120;
-            BackgroundColor = ConsoleColor.DarkGreen;
-            ForegroundColor = ConsoleColor.White;
-            WriteLine($"┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐");
-            WriteLine($"│{text,-117}│");
-            WriteLine($"└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘");
-            ForegroundColor = ConsoleColor.White;
-            BackgroundColor = ConsoleColor.Black;
-            WriteLine("");
-        }
-        /// <summary>
-        /// Вывод моей шапки
-        /// </summary>
-        /// <param name="text"></param>
-        private static void MyFooter(string text = "Для выхода нажмите любую кнопку ...")
-        {
-            WriteLine("\n" + text);
-            ReadKey();
+            MyToolsClass.MyFooter();
         }
     }
 }
