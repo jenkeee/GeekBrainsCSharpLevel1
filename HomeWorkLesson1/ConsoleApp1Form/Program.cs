@@ -84,7 +84,7 @@ namespace ConsoleApp1Form
             WriteLine("");
         }
         /// <summary>
-        /// Вывод моей шапки
+        /// Вывод моего подвала
         /// </summary>
         /// <param name="text"></param>
         private static void MyFooter(string text = "Для выхода нажмите любую кнопку ...")

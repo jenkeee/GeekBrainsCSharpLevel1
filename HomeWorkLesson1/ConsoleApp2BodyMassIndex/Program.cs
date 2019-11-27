@@ -26,7 +26,6 @@ namespace ConsoleApp2BodyMassIndex
             ////////////////////////////////////////////////////////////////////
             MyFooter();
         }
-
         /// <summary>
         /// Ввод вещественного числа роста человека с консоли
         /// </summary>
@@ -51,7 +50,6 @@ namespace ConsoleApp2BodyMassIndex
                 Beep(500,500);
             }
         }
-
         /// <summary>
         /// Ввод целого числа массы человека с консоли
         /// </summary>
@@ -95,7 +93,7 @@ namespace ConsoleApp2BodyMassIndex
             WriteLine("");
         }
         /// <summary>
-        /// Вывод моей шапки
+        /// Вывод моего подвала
         /// </summary>
         /// <param name="text"></param>
         private static void MyFooter(string text = "Для выхода нажмите любую кнопку ...")
