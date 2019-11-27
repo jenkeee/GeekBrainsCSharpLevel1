@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp4Swap", "ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp5SurnameNameCity", "ConsoleApp5SurnameNameCity\ConsoleApp5SurnameNameCity.csproj", "{2B73054C-C526-436D-837D-08DEA9D99F99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp6CreateClass", "ConsoleApp6CreateClass\ConsoleApp6CreateClass.csproj", "{3F54A38D-B2C4-4FAF-96D7-B8F75F3261FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2B73054C-C526-436D-837D-08DEA9D99F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B73054C-C526-436D-837D-08DEA9D99F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B73054C-C526-436D-837D-08DEA9D99F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F54A38D-B2C4-4FAF-96D7-B8F75F3261FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F54A38D-B2C4-4FAF-96D7-B8F75F3261FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F54A38D-B2C4-4FAF-96D7-B8F75F3261FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F54A38D-B2C4-4FAF-96D7-B8F75F3261FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
