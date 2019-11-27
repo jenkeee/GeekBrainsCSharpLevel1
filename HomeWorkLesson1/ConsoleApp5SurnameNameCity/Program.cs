@@ -16,14 +16,42 @@ namespace ConsoleApp5SurnameNameCity
         /// в) **Сделать задание б с использованием собственных методов (например, Print(string ms, int x,int y).
         /// Рассахатский
         /// </summary>
-        static void Main(string[] args)
+        static void Main()
         {
             MyHeader(text: "Задача 5. Имя, фамилия, город проживания.");
             ///////////////////////////////////////////////////////////////
-
-
+            WriteLine("Пункт А. Вывод на экран имени, фамилии и города проживания.");
+            string myName = "Андрей";
+            string mySurname = "Рассахатский";
+            string myCity = "Кузнецк";
+            WriteLine($"Фамилия: {mySurname} Имя: {myName} Город: {myCity}");
+            MyFooter("Для продолжения нажмите любую кнопку ...");
+            Clear();
+            //////////////////////////////////////////////////////////////
+            SetCursorPosition(30,12);
+            WriteLine("Пункт Б. Вывод на экран в центре экрана.");
+            SetCursorPosition(30,14);
+            WriteLine($"Фамилия: {mySurname} Имя: {myName} Город: {myCity}");
+            SetCursorPosition(30,16);
+            WriteLine("Для продолжения нажмите любую кнопку ...");
+            ReadKey();
+            Clear();
+            ///////////////////////////////////////////////////////////////
+            MyPrint("Пункт В. Вывод на экран с помощью метода.", 30, 9);
+            MyPrint($"Фамилия: {mySurname} Имя: {myName} Город: {myCity}", 30, 11);
             ///////////////////////////////////////////////////////////////
             MyFooter();
+        }
+        /// <summary>
+        /// Вывод текста в определенном месте экрана
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        private static void MyPrint(string message, int x, int y)
+        {
+            SetCursorPosition(x, y);
+            WriteLine(message);
         }
 
         /// <summary>
