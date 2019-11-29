@@ -18,8 +18,7 @@ namespace ConsoleApp4LoginPassword
         /// С помощью цикла do while ограничить ввод пароля тремя попытками.
         /// Рассахатский
         /// </summary>
-        /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             MyHelper.MyHeader(text:"Задача 4. Реализовать метод проверки логина и пароля.");
             ///////////////////////////////////////////////////////////////////////////////////
@@ -52,12 +51,11 @@ namespace ConsoleApp4LoginPassword
                 {
                     break;
                 }
-                tryCount--;
+                tryCount--; //уменьшение количества попыток, при ноле - прерывание цикла
                 WriteLine($"Логин/пароль неправильные, вы не прошли авторизацию, осталось попыток: {tryCount}");
                 Beep(500, 500);
             } while (tryCount > 0);
-
-            bool successValidation = tryCount > 0;
+            bool successValidation = tryCount > 0; //признак успешного прохождения авторизации
             return successValidation;
         }
         /// <summary>

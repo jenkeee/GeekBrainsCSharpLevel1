@@ -20,7 +20,7 @@ namespace ConsoleApp3CountWhenNumbers
             MyHelper.MyHeader(text:"Задача 3. Подсчитать сумму всех нечетных положительных чисел.");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Ввести 0 для выхода из цикла и показа результата.");
-            int sumNumbers = CountFromConsoleNumbers();
+            int sumNumbers = CountFromConsoleNumbers(); //Подсче введенных чисел с консоли
             WriteLine($"Сумма нечетных и положительных чисел = {sumNumbers}");
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
@@ -37,11 +37,11 @@ namespace ConsoleApp3CountWhenNumbers
                 Write("Введите число (int):>");
                 if (Int32.TryParse(ReadLine(), out int number))
                 {
-                    if (number > 0  && number % 2 != 0)
+                    if (number > 0  && number % 2 != 0) //число должно быть положительным и быть нечетным
                     {
                         sumNumbers += number;
                     }
-                    else if (number == 0)
+                    else if (number == 0) //прерывание цикла
                     {
                         return sumNumbers;
                     }

@@ -19,7 +19,7 @@ namespace ConsoleApp2CountNumbersOfNumber
             MyHelper.MyHeader(text:"Задача 2. Написать метод подсчета количества цифр числа.");
             ///////////////////////////////////////////////////////////////////////////////////
             int number = MyHelper.GetNumberFromConsole("Введите число (int)");
-            int count = GetCountNumbersInNumber(number);
+            int count = GetCountNumbersInNumber(number); //подсчет количества цифр в этом числе
             WriteLine($"Количество цифр в этом числе: {count}");
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();

@@ -21,7 +21,7 @@ namespace ConsoleApp1MinimalNumber
             int num1 = MyHelper.GetNumberFromConsole("Введите первое число (int)");
             int num2 = MyHelper.GetNumberFromConsole("Введите второе число (int)");
             int num3 = MyHelper.GetNumberFromConsole("Введите третье число (int)");
-            int numMininmal = GetMinimalFromThreeNumbers(num1, num2, num3);
+            int numMininmal = GetMinimalFromThreeNumbers(num1, num2, num3); //нахождение минимального числа из трех
             WriteLine($"Минимальное число это - {numMininmal}");
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
