@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp5BodyWeightIndex"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp6CountGoodNumbers", "ConsoleApp6CountGoodNumbers\ConsoleApp6CountGoodNumbers.csproj", "{93F1F053-A832-4634-BD16-B9C702909031}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp7RecursiveMethods", "ConsoleApp7RecursiveMethods\ConsoleApp7RecursiveMethods.csproj", "{07D65AE8-AB1B-427A-9B7A-5680F7324D5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{93F1F053-A832-4634-BD16-B9C702909031}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F1F053-A832-4634-BD16-B9C702909031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93F1F053-A832-4634-BD16-B9C702909031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D65AE8-AB1B-427A-9B7A-5680F7324D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D65AE8-AB1B-427A-9B7A-5680F7324D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D65AE8-AB1B-427A-9B7A-5680F7324D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D65AE8-AB1B-427A-9B7A-5680F7324D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
