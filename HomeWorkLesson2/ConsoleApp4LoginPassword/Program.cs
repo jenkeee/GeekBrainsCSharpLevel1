@@ -22,7 +22,7 @@ namespace ConsoleApp4LoginPassword
         {
             MyHelper.MyHeader(text:"Задача 4. Реализовать метод проверки логина и пароля.");
             ///////////////////////////////////////////////////////////////////////////////////
-            bool successValidation = SuccessValidation(); //авторизация пользователя
+            bool successValidation = SuccessValidation(); //Успешная авторизация пользователя
             if (successValidation)
             {
                 WriteLine("Вы успешно прошли авторизацию!");
@@ -65,7 +65,7 @@ namespace ConsoleApp4LoginPassword
         /// <param name="password"></param>
         /// <param name="needLogin">требуемый логин</param>
         /// <param name="needPassword">требуемый пароль</param>
-        /// <returns></returns>
+        /// <returns>логин пароль подходят</returns>
         static bool ValidationUser(string login, string password, string needLogin = "root", string needPassword = "GeekBrains")
         {
             return (login == needLogin && password == needPassword);

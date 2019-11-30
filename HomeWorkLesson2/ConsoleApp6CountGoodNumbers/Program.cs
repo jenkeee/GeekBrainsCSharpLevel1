@@ -38,7 +38,7 @@ namespace ConsoleApp6CountGoodNumbers
             long sum = default;
             for (int i = from; i < to; i++)
             {
-                if (isGoodInt(i))
+                if (isGoodInt(i)) //определение хорошего числа
                 {
                     sum += i;
                 }

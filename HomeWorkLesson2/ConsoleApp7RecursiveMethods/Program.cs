@@ -20,7 +20,7 @@ namespace ConsoleApp7RecursiveMethods
             MyHelper.MyHeader(text: "Задача 7. Рекурсивные методы.");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт А. Рекурсивный метод вывода на экран чисел от a до b (a < b).");
-            var (noCancel, numberA, numberB) = InputNumbersFromUser();
+            var (noCancel, numberA, numberB) = InputNumbersFromUser(); //Ввод входных значений с консоли
             if (noCancel)
             {
                 PrintNumberRecursive(numberA, numberB); //рекурсивный вывод чисел на экран
@@ -28,10 +28,10 @@ namespace ConsoleApp7RecursiveMethods
             WriteLine("\n");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт Б. Рекурсивный метод суммы чисел от a до b. (число а может быть больше b)");
-            (noCancel, numberA, numberB) = InputNumbersFromUser();
+            (noCancel, numberA, numberB) = InputNumbersFromUser(); //Ввод входных значений с консоли
             if (noCancel)
             {
-                int sum = SummNumberRecursive(numberA, numberB);
+                int sum = SummNumberRecursive(numberA, numberB); //рекурсивная сумма чисел
                 WriteLine($"Сумма чисел = {sum}");
             }
             ///////////////////////////////////////////////////////////////////////////////////
@@ -49,7 +49,7 @@ namespace ConsoleApp7RecursiveMethods
                 noCancel = MyHelper.GetNumberFromConsole(out int numberB, "Пожалуйста введите число b (int) q-отмена");
                 return (noCancel, numberA, numberB);
             }
-            return (noCancel, default, default);
+            return (noCancel, default, default); //пользователь отменил ввод
         }
         /// <summary>
         /// Рекурсивный вывод чисел на экран
@@ -61,7 +61,7 @@ namespace ConsoleApp7RecursiveMethods
             Write($"{a} ");
             if (a < b)
             {
-                PrintNumberRecursive(a + 1, b);
+                PrintNumberRecursive(a + 1, b); //пробег по всем числам
             }
         }
         /// <summary>
@@ -74,13 +74,13 @@ namespace ConsoleApp7RecursiveMethods
         {
             if (a < b)
             {
-                return a + SummNumberRecursive(a + 1, b);
+                return a + SummNumberRecursive(a + 1, b); //пробег если первое меньше второго
             }
             if (a > b)
             {
-                return a + SummNumberRecursive(a - 1, b);
+                return a + SummNumberRecursive(a - 1, b); //пробег если первое больше второго
             }
-            return a;
+            return a; //конечный метод
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ConsoleApp5BodyWeightIndex
             MyHelper.MyHeader(text: "Задача 5. Программа индекс массы тела с рекомендациями по приведению ИМТ к норме.");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт А. Вычисление индекса массы тела и собщение, что нужно сделать чтоб была норма");
-            var (noCancel, weight, growth) = InputNumbersFromUser();
+            var (noCancel, weight, growth) = InputNumbersFromUser(); //Ввод входных значений с консоли
             if (noCancel)
             {
                 double bodyWeightIndex = CalcBodyWeightIndex(weight, growth); //вычисление индекса массы тела
@@ -33,13 +33,13 @@ namespace ConsoleApp5BodyWeightIndex
             }
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("\nПункт Б. Расчет, на сколько килограмм пополнеть или похудеть чтоб привести туловище в норму");
-            (noCancel, weight, growth) = InputNumbersFromUser();
+            (noCancel, weight, growth) = InputNumbersFromUser(); //Ввод входных значений с консоли
             if (noCancel)
             {
                 double bodyWeightIndex = CalcBodyWeightIndex(weight, growth); //вычисление индекса массы тела
                 WriteLine($"Вычисленный индекс массы тела равен {bodyWeightIndex:F1}");
                 WriteLine("Рекомандации насчет корректировки массы тела:");
-                WriteLine(GetCountRecomendationOfIndex(bodyWeightIndex,growth, weight));
+                WriteLine(GetCountRecomendationOfIndex(bodyWeightIndex,growth, weight)); //получение рекомендации числовой на основе индекса
             }
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
