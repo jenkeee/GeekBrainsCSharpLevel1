@@ -79,7 +79,6 @@ namespace ConsoleApp3Rational
                 Beep(500, 500);
             }
         }
-
         /// <summary>
         /// Вывод моей шапки консольного приложения
         /// </summary>
@@ -131,6 +130,5 @@ namespace ConsoleApp3Rational
             WriteLine(text + "\n");
             ReadKey();
         }
-        
     }
 }
