@@ -43,18 +43,18 @@ namespace ConsoleApp3Rational
         /// <param name="denom">знаменатель</param>
         public Rational(int num, int denom)
         {
-            this.num = num;
-            this.denom = denom;
+            Num = num;
+            Denom = denom;
         }
         /// <summary>
         /// Суммирование двух чисел
         /// </summary>
         /// <param name="other">второе число</param>
         /// <returns>результат</returns>
-        public Rational Plus(Rational other)
+        private Rational Plus(Rational other)
         {
-            int num = this.num * other.denom + this.denom * other.num;
-            int denom = this.denom * other.denom;
+            int num = Num * other.denom + Denom * other.num;
+            int denom = Denom * other.denom;
             return new Rational(num, denom);
         }
         /// <summary>
@@ -62,10 +62,10 @@ namespace ConsoleApp3Rational
         /// </summary>
         /// <param name="other">второе число</param>
         /// <returns>результат</returns>
-        public Rational Minus(Rational other)
+        private Rational Minus(Rational other)
         {
-            int num = this.num * other.denom - this.denom * other.num;
-            int denom = this.denom * other.denom;
+            int num = Num * other.denom - Denom * other.num;
+            int denom = Denom * other.denom;
             return new Rational(num, denom);
         }
         /// <summary>
@@ -73,10 +73,10 @@ namespace ConsoleApp3Rational
         /// </summary>
         /// <param name="other">второе число</param>
         /// <returns>результат</returns>
-        public Rational Multi(Rational other)
+        private Rational Multi(Rational other)
         {
-            int num = this.num * other.num;
-            int denom = this.denom * other.denom;
+            int num = Num * other.num;
+            int denom = Denom * other.denom;
             return new Rational(num, denom);
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace ConsoleApp3Rational
         /// </summary>
         /// <param name="other">второе число</param>
         /// <returns>результат</returns>
-        public Rational Divid(Rational other)
+        private Rational Divid(Rational other)
         {
-            int num = this.num * other.denom;
-            int denom = this.denom * other.num;
+            int num = Num * other.denom;
+            int denom = Denom * other.num;
             return  new Rational(num, denom);
         }
         /// <summary>
@@ -96,20 +96,20 @@ namespace ConsoleApp3Rational
         public void DoPrunningRational()
         {
             int min; //минимальное из двух чисел - возможный общий делитель
-            if (num < denom)
+            if (Num < Denom)
             {
-                min = num / 2;
+                min = Num / 2;
             }
             else
             {
-                min = denom / 2;
+                min = Denom / 2;
             }
             for (int i = min; i >= 2; i--)
             {
-                if (num % i == 0 && denom % i == 0)
+                if (Num % i == 0 && Denom % i == 0)
                 {
-                    num /= i;
-                    denom /= i;
+                    Num /= i;
+                    Denom /= i;
                     break;
                 }
             }
@@ -117,7 +117,7 @@ namespace ConsoleApp3Rational
         /// <summary>
         /// Получение десятичной дроби числа
         /// </summary>
-        public double GetDecValue => Convert.ToDouble(num / denom);
+        public double GetDecValue => Convert.ToDouble(Num / Denom);
         //Перегрузка обычных бинарных операций
         public static Rational operator +(Rational r1, Rational r2) => r1.Plus(r2);
         public static Rational operator -(Rational r1, Rational r2) => r1.Minus(r2);
@@ -129,7 +129,7 @@ namespace ConsoleApp3Rational
         /// <returns>строка</returns>
         public override string ToString()
         {
-            return $"{num}/{denom}";
+            return $"{Num}/{Denom}";
         }
     }
 }
