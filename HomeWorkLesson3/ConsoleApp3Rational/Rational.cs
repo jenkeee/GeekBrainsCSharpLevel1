@@ -106,7 +106,7 @@ namespace ConsoleApp3Rational
             }
             for (int i = min; i >= 2; i--)
             {
-                if (Num % i == 0 && Denom % i == 0)
+                if (Num % i == 0 && Denom % i == 0) //нахождение общего делителя
                 {
                     Num /= i;
                     Denom /= i;
