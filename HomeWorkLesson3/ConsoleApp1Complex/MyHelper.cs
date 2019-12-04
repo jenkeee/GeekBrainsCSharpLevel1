@@ -117,11 +117,21 @@ namespace ConsoleApp1Complex
         /// <summary>
         /// Вывод моего подвала
         /// </summary>
-        /// <param name="text">Текст внизу экрана консоли</param>
+        /// <param name="text">текст перед выходом из программы</param>
         internal static void MyFooter(string text = "Для выхода из программы нажмите любую кнопку ...")
         {
             WriteLine("\n" + text);
             ReadKey();
         }
+        /// <summary>
+        /// Вывод паузы в работе программы
+        /// </summary>
+        /// <param name="text">текст во время паузы</param>
+        internal static void MyPause(string text = "Для продолжения нажмите любую кнопку ...")
+        {
+            WriteLine(text + "\n");
+            ReadKey();
+        }
+        
     }
 }
