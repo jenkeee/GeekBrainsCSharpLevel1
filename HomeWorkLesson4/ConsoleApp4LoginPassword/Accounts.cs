@@ -12,14 +12,14 @@ namespace ConsoleApp4LoginPassword
     /// </summary>
     public class Accounts
     {
-        private Account[] arrs;
+        private Account[] accounts;
         /// <summary>
         /// Аккаутны пользователя из файла
         /// </summary>
         /// <param name="fileName">имя файла</param>
-        public Accounts(string fileName = @"..\..\TextFileLoginPassword.txt")
+        public Accounts(string fileName)
         {
-            Account[] accounts = new Account[0];
+            accounts = new Account[0];
             using (StreamReader reader = new StreamReader(fileName))
             {
                 while (!reader.EndOfStream)
@@ -38,7 +38,7 @@ namespace ConsoleApp4LoginPassword
         /// <returns>правильный логин</returns>
         public bool IsValidLogin(string login)
         {
-            foreach (Account item in arrs)
+            foreach (Account item in accounts)
             {
                 if (item.Login == login)
                 {
@@ -55,7 +55,7 @@ namespace ConsoleApp4LoginPassword
         /// <returns>правильная пара логин пароль</returns>
         public bool IsValidLoginPassword(string login, string password)
         {
-            foreach (Account item in arrs)
+            foreach (Account item in accounts)
             {
                 if (item.IsValid(login, password))
                 {
