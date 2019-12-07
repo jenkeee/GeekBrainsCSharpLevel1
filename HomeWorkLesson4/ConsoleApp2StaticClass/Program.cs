@@ -29,7 +29,7 @@ namespace ConsoleApp2StaticClass
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт Б. Статический метод считывания массива из текстового файла.");
             
-            StaticClass.SaveArrayToFile(arrInts,"data.dat");
+            StaticClass.SaveArrayToFile(arrInts,@"..\..\data.txt");
 
 
             ///////////////////////////////////////////////////////////////////////////////////
