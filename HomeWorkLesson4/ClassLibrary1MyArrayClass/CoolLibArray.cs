@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Console;
 
-namespace ConsoleApp3MyArrayClass
+namespace ClassLibrary1MyArrayClass
 {
     /// <summary>
     /// Класс массива
     /// </summary>
-    class CoolArray
+    public class CoolLibArray
     {
         private int[] arr;
         Random rnd = new Random();
-        public CoolArray(int size)
+        public CoolLibArray(int size)
         {
             arr = new int[size];
             for (int i = 0; i < size; i++)
@@ -29,7 +27,7 @@ namespace ConsoleApp3MyArrayClass
         /// </summary>
         /// <param name="size">массив</param>
         /// <param name="step">шаг</param>
-        public CoolArray(int size, int step)
+        public CoolLibArray(int size, int step)
         {
             arr = new int[size];
             for (int i = 0; i < size; i++)
@@ -37,7 +35,7 @@ namespace ConsoleApp3MyArrayClass
                 arr[i] = i * step;
             }
         }
-        public CoolArray(string fileName)
+        public CoolLibArray(string fileName)
         {
             if (File.Exists(fileName))
             {
@@ -48,8 +46,6 @@ namespace ConsoleApp3MyArrayClass
                     arr[i] = int.Parse(ss[i]);
                 }
             }
-            else
-                WriteLine("Ошибка загрузки файла");
         }
         /// <summary>
         /// Получение максимального значения
@@ -119,9 +115,12 @@ namespace ConsoleApp3MyArrayClass
         {
             get => arr.Length;
         }
-        public void Print()
+        public string Print()
         {
-            Array.ForEach(arr, i => Write($"{i,4} "));
+            StringBuilder sb = new StringBuilder();
+            Array.ForEach(arr, i => sb.Append($"{i,4} "));
+            return sb.ToString();
         }
     }
+
 }

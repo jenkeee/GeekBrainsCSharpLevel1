@@ -16,8 +16,9 @@ namespace ConsoleApp3MyArrayClass
         /// <param name="message">сообщение приглашение</param>
         /// <param name="min">минимум диапазона</param>
         /// <param name="max">максимум диапазона</param>
+        /// <param name="cancelEnable">Возможность отмены ввода</param>
         /// <returns>признак что число введено</returns>
-        internal static bool GetNumberFromConsole(out int number, string message = "Пожалуйста введите целое число (int) (q-отмена)", int min = int.MinValue, int max = int.MaxValue)
+        internal static bool GetNumberFromConsole(out int number, string message = "Пожалуйста введите целое число (int) (q-отмена)", int min = int.MinValue, int max = int.MaxValue, bool cancelEnable = true)
         {
             while (true)
             {
@@ -32,7 +33,7 @@ namespace ConsoleApp3MyArrayClass
                     }
                     WriteLine($"Ошибка! Введенное число превышает разрешенный диапазон от {min} до {max}!");
                 }
-                else if (buffString == "q") //введена пользовательская команда отмена ввода
+                else if (buffString == "q" && cancelEnable) //введена пользовательская команда отмена ввода
                 {
                     number = default;
                     return false;
