@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3MyArrayClass", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1MyArrayClass", "ClassLibrary1MyArrayClass\ClassLibrary1MyArrayClass.csproj", "{B0E179CD-36B9-4309-8E9E-2C3ED068C976}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp4LoginPassword", "ConsoleApp4LoginPassword\ConsoleApp4LoginPassword.csproj", "{5759867A-2C83-4818-B2BC-742658754029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B0E179CD-36B9-4309-8E9E-2C3ED068C976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0E179CD-36B9-4309-8E9E-2C3ED068C976}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0E179CD-36B9-4309-8E9E-2C3ED068C976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5759867A-2C83-4818-B2BC-742658754029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5759867A-2C83-4818-B2BC-742658754029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5759867A-2C83-4818-B2BC-742658754029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5759867A-2C83-4818-B2BC-742658754029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
