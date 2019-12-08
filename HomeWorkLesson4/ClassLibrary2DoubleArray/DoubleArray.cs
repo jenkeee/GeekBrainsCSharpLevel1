@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,25 +12,122 @@ namespace ClassLibrary2DoubleArray
     /// </summary>
     public class DoubleArray
     {
-        private int[,] doubleArr;
+        private int[,] twoDimArr;
         /// <summary>
         /// Конструктор с заполнением массива случайными числами
         /// </summary>
-        /// <param name="sizeX">число колонок</param>
-        /// <param name="sizeY">число строк</param>
-        public DoubleArray(int sizeX, int sizeY)
+        /// <param name="sizeCol">число колонок</param>
+        /// <param name="sizeRow">число строк</param>
+        public DoubleArray(int sizeCol, int sizeRow)
         {
             Random rnd = new Random();
-            doubleArr = new int[sizeX, sizeY];
-            for (int i = 0; i < sizeX; i++)
+            twoDimArr = new int[sizeCol, sizeRow];
+            for (int i = 0; i < sizeCol; i++)
             {
-                for (int j = 0; j < sizeY; j++)
+                for (int j = 0; j < sizeRow; j++)
                 {
-                    doubleArr[i, j] = rnd.Next(1, 1001);
+                    twoDimArr[i, j] = rnd.Next(0, 1001);
                 }
             }
         }
 
 
+        /// <summary>
+        /// Сумма всех элементов массива
+        /// </summary>
+        public int Sum()
+        {
+            int sum = 0;
+            foreach (var item in twoDimArr)
+            {
+                sum += item;
+            }
+            return sum;
+        }
+        /// <summary>
+        /// Сумма всех элементов больше заданного
+        /// </summary>
+        /// <param name="valMin">минимальное значение числа</param>
+        /// <returns></returns>
+        public int Sum(int valMin)
+        {
+            int sum = 0;
+            foreach (var item in twoDimArr)
+            {
+                if (item > valMin)
+                {
+                    sum += item;
+                }
+            }
+            return sum;
+        }
+        /// <summary>
+        /// Минимальное число в массиве
+        /// </summary>
+        public int Min
+        {
+            get
+            {
+                int min = int.MaxValue;
+                foreach (var item in twoDimArr)
+                {
+                    if (item < min)
+                    {
+                        min = item;
+                    }
+                }
+                return min;
+            }
+        }
+        /// <summary>
+        /// Максимальное число в массиве
+        /// </summary>
+        public int Max
+        {
+            get
+            {
+                int max = int.MinValue;
+                foreach (var item in twoDimArr)
+                {
+                    if (item > max)
+                    {
+                        max = item;
+                    }
+                }
+                return max;
+            }
+        }
+        /// <summary>
+        /// Получение индекса элемента по значению
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public (bool, int, int) GetIndexForValue(int value)
+        {
+            for (int i = 0; i < twoDimArr.GetLength(1); i++)
+            {
+                for (int j = 0; j < twoDimArr.GetLength(0); j++)
+                {
+                    if (twoDimArr[j, i] == value)
+                    {
+                        return (true, j, i);
+                    }
+                }
+            }
+            return (false, default, default);
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < twoDimArr.GetLength(1); i++)
+            {
+                for (int j = 0; j < twoDimArr.GetLength(0); j++)
+                {
+                    sb.Append(twoDimArr[j, i] + " ");
+                }
+                sb.Append("\n");
+            }
+            return sb.ToString();
+        }
     }
 }

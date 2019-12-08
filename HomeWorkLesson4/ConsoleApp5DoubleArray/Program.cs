@@ -25,7 +25,30 @@ namespace ConsoleApp5DoubleArray
         {
             MyHelper.MyHeader(text: "Задача 5. Библиотека с классом для работы с двумерным массивом. ");
             ///////////////////////////////////////////////////////////////////////////////////
-            DoubleArray doubleArray = new DoubleArray(4,6);
+            if (MyHelper.GetNumberFromConsole(out int colCount, "Введите число колонок у массива (int) (q-отмена)"))
+            {
+                if (MyHelper.GetNumberFromConsole(out int rowCount, "Введите число строк у массива (int) (q-отмена)"))
+                {
+                    DoubleArray doubleArray = new DoubleArray(colCount,rowCount);
+                    WriteLine("Массив заполненный случайными числами:");
+                    WriteLine(doubleArray);
+                    WriteLine($"Сумма всех элементов массива = {doubleArray.Sum()}");
+                    WriteLine("Сумма всех элементов массива больше заданного:");
+                    if (MyHelper.GetNumberFromConsole(out int minValue, "Введите заданное число (int) (q-отмена)"))
+                    {
+                        WriteLine($"Сумма всех элементов массива больше заданного = {doubleArray.Sum(minValue)}");
+                        WriteLine($"Минимальный элемент массива равен {doubleArray.Min}");
+                        int max = doubleArray.Max;
+                        WriteLine($"Максимальный элемент массива равен {max}");
+                        var (_, numCol, numRow) = doubleArray.GetIndexForValue(max);
+                        WriteLine($"Он находится в колонке {numCol + 1} и строке {numRow + 1}");
+
+
+                    }
+                }
+            }
+            
+
 
 
             ///////////////////////////////////////////////////////////////////////////////////
