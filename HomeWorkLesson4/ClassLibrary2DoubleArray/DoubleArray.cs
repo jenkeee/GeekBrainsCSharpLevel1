@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -30,7 +31,14 @@ namespace ClassLibrary2DoubleArray
                 }
             }
         }
-
+        /// <summary>
+        /// Конструктор с загрузкой из файла
+        /// </summary>
+        /// <param name="fileName"></param>
+        public DoubleArray(string fileName)
+        {
+            LoadFromFile(fileName);
+        }
 
         /// <summary>
         /// Сумма всех элементов массива
@@ -98,7 +106,7 @@ namespace ClassLibrary2DoubleArray
             }
         }
         /// <summary>
-        /// Получение индекса элемента по значению
+        /// Получение позиции элемента по значению
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -115,6 +123,64 @@ namespace ClassLibrary2DoubleArray
                 }
             }
             return (false, default, default);
+        }
+        /// <summary>
+        /// Сохранение массива в файл
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void SaveToFile(string fileName)
+        {
+            using (StreamWriter writer = new StreamWriter(fileName))
+            {
+                writer.WriteLine($"{twoDimArr.GetLength(0)},{twoDimArr.GetLength(1)}"); //запись размера массива
+                for (int i = 0; i < twoDimArr.GetLength(1); i++)
+                {
+                    for (int j = 0; j < twoDimArr.GetLength(0); j++)
+                    {
+                        writer.Write($"{twoDimArr[j, i]}");
+                        if (j < twoDimArr.GetLength(0) - 1)
+                        {
+                            writer.Write($",");
+                        }
+                    }
+                    writer.WriteLine();
+                }
+                writer.Close();
+            }
+        }
+        /// <summary>
+        /// Чтение массива из файла
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void LoadFromFile(string fileName)
+        {
+            if (File.Exists(fileName))
+            {
+                using (StreamReader reader = new StreamReader(fileName))
+                {
+                    string sSize = reader.ReadLine();
+                    string[] arrSize = sSize.Split(',');
+                    int sizeCol = int.Parse(arrSize[0]);
+                    int sizeRow = int.Parse(arrSize[1]);
+                    twoDimArr = new int[sizeCol, sizeRow];
+                    int i = 0;
+                    while (!reader.EndOfStream)
+                    {
+                        string ss = reader.ReadLine();
+                        string[] arrStr = ss.Split(',');
+                        for (int j = 0; j < arrStr.Length; j++)
+                        {
+                            twoDimArr[j, i] = int.Parse(arrStr[j]);
+                        }
+                        i++;
+                    }
+                    reader.Close();
+                }
+            }
+            else
+            {
+                throw new Exception($"Такой файл \"{fileName}\" не найден!");
+            }
         }
         public override string ToString()
         {
