@@ -81,6 +81,32 @@ namespace ConsoleApp2StaticClassMessage
             }
         }
         /// <summary>
+        /// Ввод символа с консоли
+        /// </summary>
+        /// <param name="number">вертаемый введенный сивол</param>
+        /// <param name="message">сообщение приглашение</param>
+        /// <returns>признак что символ введено</returns>
+        internal static bool GetNumberFromConsole(out char number, string message = "Пожалуйста введите символ (char) (q-отмена)")
+        {
+            while (true)
+            {
+                Write($"{message}:>");
+                string buffString = ReadLine();
+                if (buffString == "q") //пользовательская команда отмена ввода
+                {
+                    number = default;
+                    return false;
+                }
+                if (char.TryParse(buffString, out char num))
+                {
+                    number = num;
+                    return true;
+                }
+                WriteLine("Ошибка! Введен неверный формат вещественного числа!");
+                Beep(500, 500);
+            }
+        }
+        /// <summary>
         /// Вывод моей шапки консольного приложения
         /// </summary>
         /// <param name="title">Заголовок консоли</param>
