@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1LoginPassword", "ConsoleApp1LoginPassword\ConsoleApp1LoginPassword.csproj", "{B54C6D54-CB4A-492B-9E10-D6796244F65D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2StaticClassMessage", "ConsoleApp2StaticClassMessage\ConsoleApp2StaticClassMessage.csproj", "{6D857F4B-04DF-420E-B985-C1C48637C179}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B54C6D54-CB4A-492B-9E10-D6796244F65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B54C6D54-CB4A-492B-9E10-D6796244F65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B54C6D54-CB4A-492B-9E10-D6796244F65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D857F4B-04DF-420E-B985-C1C48637C179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D857F4B-04DF-420E-B985-C1C48637C179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D857F4B-04DF-420E-B985-C1C48637C179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D857F4B-04DF-420E-B985-C1C48637C179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
