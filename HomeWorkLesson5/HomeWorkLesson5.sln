@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1LoginPassword", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2StaticClassMessage", "ConsoleApp2StaticClassMessage\ConsoleApp2StaticClassMessage.csproj", "{6D857F4B-04DF-420E-B985-C1C48637C179}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3TwoStrings", "ConsoleApp3TwoStrings\ConsoleApp3TwoStrings.csproj", "{DEBE983C-3637-4CAC-A249-56F96F77AA44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6D857F4B-04DF-420E-B985-C1C48637C179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D857F4B-04DF-420E-B985-C1C48637C179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D857F4B-04DF-420E-B985-C1C48637C179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEBE983C-3637-4CAC-A249-56F96F77AA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBE983C-3637-4CAC-A249-56F96F77AA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBE983C-3637-4CAC-A249-56F96F77AA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBE983C-3637-4CAC-A249-56F96F77AA44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
