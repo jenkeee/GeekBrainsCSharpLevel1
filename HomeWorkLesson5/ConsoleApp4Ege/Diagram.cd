@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="ConsoleApp4Ege.Students">
-    <Position X="2.25" Y="1.5" Width="1.5" />
+    <Position X="2" Y="1.5" Width="2.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -13,7 +13,7 @@
       </Struct>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEACAAAAABAIAAAAAAAAAAAIAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAEACAAAAABAIAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Students.cs</FileName>
     </TypeIdentifier>
   </Class>

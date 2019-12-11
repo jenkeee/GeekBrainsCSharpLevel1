@@ -32,9 +32,24 @@ namespace ConsoleApp4Ege
         /// Количество учеников
         /// </summary>
         public int Length => arrStudents.Length;
-
-        
-
+        /// <summary>
+        /// Получение самых косячных учеников
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetDummersStudents()
+        {
+            Student[] tempStudents = new Student[arrStudents.Length];
+            Array.Copy(arrStudents, tempStudents, arrStudents.Length);
+            Array.Sort(tempStudents, ((st, st1) => st.Average.CompareTo(st1.Average)));
+            double minAverage = tempStudents[2].Average;
+            tempStudents = Array.FindAll(tempStudents, st => st.Average <= minAverage);
+            string[] returnMe = new string[tempStudents.Length];
+            for (int i = 0; i < tempStudents.Length; i++)
+            {
+                returnMe[i] = tempStudents[i].ToString();
+            }
+            return returnMe;
+        }
         /// <summary>
         /// Получение массива студентов из файла
         /// </summary>

@@ -46,9 +46,10 @@ namespace ConsoleApp4Ege
             MyHelper.MyPause();
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Самые косячные ученики:");
-
-            
-
+            foreach (string s in students.GetDummersStudents())
+            {
+                Write($"{s, - 30}");
+            }
             //Students.MakeSampleFile();
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
