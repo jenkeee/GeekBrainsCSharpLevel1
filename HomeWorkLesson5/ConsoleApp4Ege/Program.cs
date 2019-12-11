@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace ConsoleApp4Ege
 {
@@ -27,11 +28,28 @@ namespace ConsoleApp4Ege
         {
             MyHelper.MyHeader(text: "Задача 4. Задача ЕГЭ.");
             ///////////////////////////////////////////////////////////////////////////////////
+            Students students;
+            try
+            {
+                students = new Students(@"..\..\Data.txt"); //получение данных из файла
+            }
+            catch (Exception exc)
+            {
+                MyHelper.MyPause("Ошибка! Не удалось получить данные из файла." + exc.Message);
+                return;
+            }
+            WriteLine("Все ученики со средними оценками:");
+            for (int i = 0; i < students.Length; i++)
+            {
+                Write($"{students[i], - 30}");
+            }
+            MyHelper.MyPause();
+            ///////////////////////////////////////////////////////////////////////////////////
+            WriteLine("Самые косячные ученики:");
 
+            
 
-
-
-
+            //Students.MakeSampleFile();
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
 
