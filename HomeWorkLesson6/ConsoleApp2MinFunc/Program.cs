@@ -25,11 +25,31 @@ namespace ConsoleApp2MinFunc
             MyHelper.MyHeader(text: "Задача 2. Программа нахождения минимума функции.");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт задания А. Меню с различными функциями.");
-
+            while (GetSwitchFromConsole(out int swtch))
+            {
+                WriteLine(swtch);
+            }
 
 
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
+        }
+        /// <summary>
+        /// Выбор через консоль у пользователя необходимой функции
+        /// </summary>
+        /// <param name="swtch">вертает выбор пользователя</param>
+        /// <param name="message">приглашение</param>
+        /// <returns>не отмена</returns>
+        private static bool GetSwitchFromConsole(out int swtch, string message = "Выберите дальнейшее действие (q-отмена)")
+        {
+            WriteLine(message);
+            if (MyHelper.GetNumberFromConsole(out int swt, "Выберите функцию (1-квадрат, 2-куб, 3-синус, 4-квадратичная)", 1, 4))
+            {
+                swtch = swt;
+                return true;
+            }
+            swtch = default;
+            return false;
         }
     }
 }

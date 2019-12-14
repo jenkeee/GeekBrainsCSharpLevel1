@@ -26,7 +26,7 @@ namespace ConsoleApp2MinFunc
                 string buffString = ReadLine();
                 if (Int32.TryParse(buffString, out int num)) //введено должно быть число
                 {
-                    if (num < max && num > min) //число должно быть в допустимом диапазоне
+                    if (num <= max && num >= min) //число должно быть в допустимом диапазоне
                     {
                         number = num;
                         return true;
@@ -61,7 +61,7 @@ namespace ConsoleApp2MinFunc
                 string buffString = ReadLine();
                 if (Double.TryParse(buffString, out double num))
                 {
-                    if (num < max && num > min) //число должно быть в допустимом диапазоне
+                    if (num <= max && num >= min) //число должно быть в допустимом диапазоне
                     {
                         number = num;
                         return true;
