@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
@@ -25,12 +26,20 @@ namespace ConsoleApp2MinFunc
             MyHelper.MyHeader(text: "Задача 2. Программа нахождения минимума функции.");
             ///////////////////////////////////////////////////////////////////////////////////
             WriteLine("Пункт задания А. Меню с различными функциями.");
-            while (GetSwitchFromConsole(out int swtch))
+            while (GetSwitchFromConsole(out int swtch)) //выбор функции в консоли
             {
-                WriteLine(swtch);
+                MinOfFunc.MyFunc func = MinOfFunc.GetMyFunc(swtch);
+                MinOfFunc.SaveFunc(func, @"..\..\data.bin", 0, 10, 1);
+                double min = MinOfFunc.LoadAndMin(@"..\..\data.bin");
+                WriteLine($"Минимум функции равен = {min:F2}");
             }
-
-
+            MyHelper.MyPause();
+            ///////////////////////////////////////////////////////////////////////////////////
+            WriteLine("Пункт задания Б. Массив считанных значений.");
+            WriteLine("Записанные в последний раз числа в файл:");
+            List<double> list = MinOfFunc.LoadToListAndMin(@"..\..\data.bin", out double min2);
+            list.ForEach(WriteLine);
+            WriteLine($"Минимум функции равен = {min2:F2}");
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
         }
