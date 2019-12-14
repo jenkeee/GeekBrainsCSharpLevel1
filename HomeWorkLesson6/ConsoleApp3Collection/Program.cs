@@ -29,6 +29,7 @@ namespace ConsoleApp3Collection
             
             
             
+            Student.GenNSaveStudentsToFile(@"..\..\students.csv");
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
         }
