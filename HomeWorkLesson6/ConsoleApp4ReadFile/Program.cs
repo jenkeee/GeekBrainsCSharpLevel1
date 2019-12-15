@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace ConsoleApp4ReadFile
 {
@@ -19,6 +20,13 @@ namespace ConsoleApp4ReadFile
         {
             MyHelper.MyHeader(text: "Задача 4. Чтение файла различными способами.");
             ///////////////////////////////////////////////////////////////////////////////////
+            long size = 1024;
+            ReadWrite.WriteFileStream(@"..\..\TextFile1.txt", size);
+            ReadWrite.WriteBinary(@"..\..\TextFile2.txt", size);            
+            ReadWrite.WriteStreamWriter(@"..\..\TextFile3.txt", size);
+            ReadWrite.WriteBufferedStream(@"..\..\TextFile4.txt", size);
+            MyHelper.MyPause("Данные в файлы записаны. Для продолжения нажмите кнопку ...");
+            
 
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
