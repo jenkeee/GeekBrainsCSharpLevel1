@@ -21,15 +21,13 @@ namespace ConsoleApp3Collection
         public Students(string fileName)
         {
             list = new List<Student>();
-            using (StreamReader reader = new StreamReader(fileName))
+            using StreamReader reader = new StreamReader(fileName);
+            while (!reader.EndOfStream)
             {
-                while (!reader.EndOfStream)
-                {
-                    string s = reader.ReadLine();
-                    string[] ss = s.Split(';');
-                    list.Add( new Student(ss[0], ss[1], ss[2], ss[3],
-                        int.Parse(ss[4]), ss[5], int.Parse(ss[6]), ss[7], int.Parse(ss[8])) );
-                }
+                string s = reader.ReadLine();
+                string[] ss = s.Split(';');
+                list.Add( new Student(ss[0], ss[1], ss[2], ss[3],
+                    int.Parse(ss[4]), ss[5], int.Parse(ss[6]), ss[7], int.Parse(ss[8])) );
             }
         }
 
@@ -164,14 +162,12 @@ namespace ConsoleApp3Collection
                 new Student("Варьянов", "Андрей", "СПГУ", "Мехмат", 2, "Механический", 2, "Петербург", 23),
                 new Student("Восресеньев", "Федя", "ПГУ", "Мехмат", 1, "Механический", 3, "Пенза", 23),
             };
-            using (StreamWriter writer = new StreamWriter(fileName))
+            using StreamWriter writer = new StreamWriter(fileName);
+            foreach (Student el in list)
             {
-                foreach (Student el in list)
-                {
-                    string s = string.Join(";", el.LastName, el.FirstName, el.University, el.Facilty, el.Course,
-                        el.Department, el.Group, el.City, el.Age);
-                    writer.WriteLine(s);
-                }
+                string s = string.Join(";", el.LastName, el.FirstName, el.University, el.Facilty, el.Course,
+                    el.Department, el.Group, el.City, el.Age);
+                writer.WriteLine(s);
             }
         }
 

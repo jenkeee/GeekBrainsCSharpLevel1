@@ -24,17 +24,13 @@ namespace ConsoleApp2MinFunc
         /// <param name="step">шаг</param>
         public static void SaveFunc(MyFunc func, string fileName, double go, double end, double step)
         {
-            using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+            using FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+            using BinaryWriter writer = new BinaryWriter(fs);
+            double run = go;
+            while (run <= end)
             {
-                using (BinaryWriter writer = new BinaryWriter(fs))
-                {
-                    double run = go;
-                    while (run <= end)
-                    {
-                        writer.Write(func.Invoke(run));
-                        run += step;
-                    }
-                }
+                writer.Write(func.Invoke(run));
+                run += step;
             }
         }
         /// <summary>
@@ -45,19 +41,15 @@ namespace ConsoleApp2MinFunc
         public static double LoadAndMin(string fileName)
         {
             double min = default;
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            using FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            using BinaryReader reader = new BinaryReader(fs);
+            min = Double.MaxValue;
+            for (int i = 0; i < fs.Length / sizeof(double); i++)
             {
-                using (BinaryReader reader = new BinaryReader(fs))
+                double d = reader.ReadDouble();
+                if (d < min)
                 {
-                    min = Double.MaxValue;
-                    for (int i = 0; i < fs.Length / sizeof(double); i++)
-                    {
-                        double d = reader.ReadDouble();
-                        if (d < min)
-                        {
-                            min = d;
-                        }
-                    }
+                    min = d;
                 }
             }
             return min;
@@ -70,20 +62,16 @@ namespace ConsoleApp2MinFunc
         public static List<double> LoadToListAndMin(string fileName, out double min)
         {
             List<double> list = new List<double>();
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            using FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            using BinaryReader reader = new BinaryReader(fs);
+            min = Double.MaxValue;
+            for (int i = 0; i < fs.Length / sizeof(double); i++)
             {
-                using (BinaryReader reader = new BinaryReader(fs))
+                double d = reader.ReadDouble();
+                list.Add(d);
+                if (d < min)
                 {
-                    min = Double.MaxValue;
-                    for (int i = 0; i < fs.Length / sizeof(double); i++)
-                    {
-                        double d = reader.ReadDouble();
-                        list.Add(d);
-                        if (d < min)
-                        {
-                            min = d;
-                        }
-                    }
+                    min = d;
                 }
             }
             return list;
