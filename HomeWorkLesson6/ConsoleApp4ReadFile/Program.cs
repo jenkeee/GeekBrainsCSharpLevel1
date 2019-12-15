@@ -26,8 +26,38 @@ namespace ConsoleApp4ReadFile
             ReadWrite.WriteStreamWriter(@"..\..\TextFile3.txt", size);
             ReadWrite.WriteBufferedStream(@"..\..\TextFile4.txt", size);
             MyHelper.MyPause("Данные в файлы записаны. Для продолжения нажмите кнопку ...");
-            
-
+            /////////////////////////////////////////
+            WriteLine("Прочитанные данные из файла FileStream:");
+            byte[] arr = ReadWrite.ReadFileStream(@"..\..\TextFile1.txt");
+            foreach (var el in arr)
+            {
+                Write($"{el} ");
+            }
+            WriteLine();
+            MyHelper.MyPause();
+            /////////////////////////////////////////
+            WriteLine("Прочитанные данные из файла BinaryReader:");
+            int[] arrInt = ReadWrite.ReadBinary(@"..\..\TextFile2.txt");
+            foreach (var el in arrInt)
+            {
+                Write($"{el} ");
+            }
+            WriteLine();
+            MyHelper.MyPause();
+            /////////////////////////////////////////
+            WriteLine("Прочитанные данные из файла StreamReader:");
+            string str = ReadWrite.ReadStreamReader(@"..\..\TextFile3.txt");
+            WriteLine(str);
+            MyHelper.MyPause();
+            /////////////////////////////////////////
+            WriteLine("Прочитанные данные из файла BufferedStream:");
+            byte[] arr2 = ReadWrite.ReadFileStream(@"..\..\TextFile4.txt");
+            foreach (var el in arr2)
+            {
+                Write($"{el} ");
+            }
+            WriteLine();
+            MyHelper.MyPause();
             ///////////////////////////////////////////////////////////////////////////////////
             MyHelper.MyFooter();
         }
