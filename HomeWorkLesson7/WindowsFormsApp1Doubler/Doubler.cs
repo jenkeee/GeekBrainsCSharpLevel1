@@ -22,7 +22,9 @@ namespace WindowsFormsApp1Doubler
         {
             stackPlayerNumber = new Stack<int>();
         }
-
+        /// <summary>
+        /// Начало новой игры
+        /// </summary>
         public void RestartGame()
         {
             Random rnd = new Random();
@@ -30,7 +32,10 @@ namespace WindowsFormsApp1Doubler
             winnerNumber = rnd.Next(1, 10);
             ClearThisData();
         }
-
+        /// <summary>
+        /// Прибавка 1
+        /// </summary>
+        /// <returns>выигрыш в игре</returns>
         public bool Plus()
         {
             stackPlayerNumber.Push(playerNumber);
@@ -44,7 +49,10 @@ namespace WindowsFormsApp1Doubler
             }
             return false;
         }
-
+        /// <summary>
+        /// Умножить на 2
+        /// </summary>
+        /// <returns>выигрыш в игре</returns>
         public bool MultiplyTwo()
         {
             stackPlayerNumber.Push(playerNumber);
@@ -58,7 +66,9 @@ namespace WindowsFormsApp1Doubler
             }
             return false;
         }
-
+        /// <summary>
+        /// Сброс всех действий
+        /// </summary>
         public void Reset()
         {
             stackPlayerNumber.Push(playerNumber);
@@ -66,7 +76,9 @@ namespace WindowsFormsApp1Doubler
             countCommand = 0;
             stackPlayerNumber.Clear();
         }
-
+        /// <summary>
+        /// Отмена последнего действия
+        /// </summary>
         public void Undo()
         {
             if (countCommand == 0) 
@@ -74,7 +86,10 @@ namespace WindowsFormsApp1Doubler
             playerNumber = stackPlayerNumber.Pop();
             countCommand--;
         }
-
+        /// <summary>
+        /// Получение всех данных на окно
+        /// </summary>
+        /// <returns></returns>
         public (string number, string command, string winner) GetAllForForm()
         {
             string number = playerNumber.ToString();
@@ -82,7 +97,7 @@ namespace WindowsFormsApp1Doubler
             string winner = (itIsGame) ? $"Режим игры. Для победы в игре получить число {winnerNumber}" : string.Empty;
             return (number, command, winner);
         }
-
+        //очистка данных в классе
         private void ClearThisData()
         {
             playerNumber = 0;

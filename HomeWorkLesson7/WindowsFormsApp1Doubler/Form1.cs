@@ -29,7 +29,9 @@ namespace WindowsFormsApp1Doubler
             InitializeComponent();
             doubler = new Doubler();
         }
-		//перерисовка
+		/// <summary>
+        /// Перерисовка данных в окне
+        /// </summary>
         private void Repaint()
         {
             var (number, command, winner) = doubler.GetAllForForm();
@@ -37,33 +39,53 @@ namespace WindowsFormsApp1Doubler
             labelCommandCount.Text = command;
             labelWinner.Text = winner;
         }
-
+        /// <summary>
+        /// Увеличение на 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPlus_Click(object sender, EventArgs e)
         {
             bool win = doubler.Plus();
             Repaint();
             if (win) MessageBox.Show("Вы победили в этой игре!", "Поздравления", MessageBoxButtons.OK);
         }
-
+        /// <summary>
+        /// Умножение на 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonMulTwo_Click(object sender, EventArgs e)
         {
             bool win = doubler.MultiplyTwo();
             Repaint();
             if (win) MessageBox.Show("Вы победили в этой игре!", "Поздравления", MessageBoxButtons.OK);
         }
-
+        /// <summary>
+        /// Сброс действий
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonReset_Click(object sender, EventArgs e)
         {
             doubler.Reset();
             Repaint();
         }
-
+        /// <summary>
+        /// Отмена последнего действия
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonUndo_Click(object sender, EventArgs e)
         {
             doubler.Undo();
             Repaint();
         }
-
+        /// <summary>
+        /// Начало новой игры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void начатьНовуюИгруToolStripMenuItem_Click(object sender, EventArgs e)
         {
             doubler.RestartGame();
