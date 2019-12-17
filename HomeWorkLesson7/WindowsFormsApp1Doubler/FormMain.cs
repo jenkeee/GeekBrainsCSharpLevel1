@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1Doubler
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
         private Doubler doubler;
         /// <summary>
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1Doubler
         /// Вся логика игры должна быть реализована в классе с удвоителем.
         /// Рассахатский
         /// </summary>
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
             doubler = new Doubler();

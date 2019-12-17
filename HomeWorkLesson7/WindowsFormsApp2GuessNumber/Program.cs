@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1Doubler
+namespace WindowsFormsApp2GuessNumber
 {
     static class Program
     {
