@@ -12,46 +12,59 @@ namespace WindowsFormsApp2GuessNumber
     /// </summary>
     class Computer
     {
+        private const int COUNT_TRY = 7;
+        /// <summary>
+        /// статус игры
+        /// </summary>
         public enum Status : byte
         {
-            None,
-            Victory,
-            TryAgainUp,
-            TryAgainDown,
-            GameOver
+            None, //никакой
+            Victory, //победа
+            TryAgainUp, //компьютер загадал число больше
+            TryAgainDown, //компьютер загадал число меньше
+            GameOver //конец игры
         }
-
+        //число загаданное компьтером
         private int computerNumber;
+        //число попыток отгадать число
         private int countTry;
-
-
+        /// <summary>
+        /// Загадай число комьютер
+        /// </summary>
         public void QuestComputer()
         {
             Random rnd = new Random();
             computerNumber = rnd.Next(1, 100);
-            countTry = 7;
+            countTry = COUNT_TRY; //число попыток
         }
-
+        /// <summary>
+        /// Проба отгадать число
+        /// </summary>
+        /// <param name="number">число</param>
+        /// <returns>результат</returns>
         public Status TryNumber(int number)
         {
             if (computerNumber == 0)
                 return Status.None;
-            if (number == computerNumber)
+            if (number == computerNumber) //игрок отгадал число
             {
                 computerNumber = 0;
                 return Status.Victory;
             }
             countTry--;
-            if (countTry <= 0)
+            if (countTry <= 0) //кончились попытки
             {
                 computerNumber = 0;
                 return Status.GameOver;
             }
-            if (number < computerNumber)
+            if (number < computerNumber) //компьютер загадал число больше
                 return Status.TryAgainUp;
             return Status.TryAgainDown;
         }
-
+        /// <summary>
+        /// Сообщения для отображения на форме
+        /// </summary>
+        /// <returns></returns>
         public (string dialog, string count, bool enabled) GetStringsMessages()
         {
             string dialog = String.Empty;
@@ -64,7 +77,11 @@ namespace WindowsFormsApp2GuessNumber
             string count = $"Осталось {countTry} попыток";
             return (dialog, count, true);
         }
-
+        /// <summary>
+        /// Сообщение ползоваетелю в соответтствии со статусом
+        /// </summary>
+        /// <param name="status">статус</param>
+        /// <returns>сообщение</returns>
         public static string GetMessageFromStatus(Computer.Status status)
         {
             string message = status switch

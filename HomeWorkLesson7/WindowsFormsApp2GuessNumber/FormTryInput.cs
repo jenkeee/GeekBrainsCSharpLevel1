@@ -18,7 +18,11 @@ namespace WindowsFormsApp2GuessNumber
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Проверка числа и возвращение результата на вызывающую форму
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTry_Click(object sender, EventArgs e)
         {
             if (int.TryParse(textBoxNumber.Text, out int number))

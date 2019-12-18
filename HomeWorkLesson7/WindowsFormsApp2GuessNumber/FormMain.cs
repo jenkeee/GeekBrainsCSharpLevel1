@@ -28,7 +28,9 @@ namespace WindowsFormsApp2GuessNumber
             InitializeComponent();
             labelHeader.Text = "Методичка 7. C# Уровень 1. Введение в Windows Forms.\nЗадача 2. Игра \"Угадай число\".";
         }
-
+        /// <summary>
+        /// Перерисовка элементов на форме
+        /// </summary>
         private void Repaint()
         {
             var (dialog, count, enabled) = computer.GetStringsMessages();
@@ -37,13 +39,21 @@ namespace WindowsFormsApp2GuessNumber
             labelDialog.Text = dialog;
             labelCount.Text = count;
         }
-
+        /// <summary>
+        /// Компьютер загадывает число
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonQuestComputer_Click(object sender, EventArgs e)
         {
             computer.QuestComputer();
             Repaint();
         }
-
+        /// <summary>
+        /// Проба отгадать число
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTry_Click(object sender, EventArgs e)
         {
             if (int.TryParse(textBoxNumber.Text, out int number))
@@ -57,7 +67,11 @@ namespace WindowsFormsApp2GuessNumber
             SystemSounds.Beep.Play();
             MessageBox.Show("Не удалось разобрать число в текстовом поле.");
         }
-
+        /// <summary>
+        /// Проба отгадать число через окно
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTryWindow_Click(object sender, EventArgs e)
         {
             FormTryInput form = new FormTryInput();
