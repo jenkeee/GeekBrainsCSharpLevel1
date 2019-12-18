@@ -24,7 +24,7 @@ namespace WindowsFormsApp2GuessNumber
         public FormMain()
         {
             InitializeComponent();
-
+            labelHeader.Text = "Методичка 7. C# Уровень 1. Введение в Windows Forms.\nЗадача 2. Игра \"Угадай число\".";
 
         }
     }

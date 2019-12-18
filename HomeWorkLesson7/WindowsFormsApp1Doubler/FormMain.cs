@@ -27,6 +27,7 @@ namespace WindowsFormsApp1Doubler
         public FormMain()
         {
             InitializeComponent();
+            labelHeader.Text = "Методичка 7. C# Уровень 1. Введение в Windows Forms.\nЗадача 1. Программа удвоитель.";
             doubler = new Doubler();
         }
 		/// <summary>
