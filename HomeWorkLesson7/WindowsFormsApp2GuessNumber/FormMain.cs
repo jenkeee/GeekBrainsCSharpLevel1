@@ -60,7 +60,15 @@ namespace WindowsFormsApp2GuessNumber
 
         private void buttonTryWindow_Click(object sender, EventArgs e)
         {
-
+            FormTryInput form = new FormTryInput();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                int number = form.TryNumber;
+                Computer.Status status = computer.TryNumber(number);
+                var message = Computer.GetMessageFromStatus(status);
+                Repaint();
+                MessageBox.Show(message);
+            }
         }
     }
 }
