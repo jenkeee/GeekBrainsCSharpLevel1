@@ -134,6 +134,7 @@ namespace WindowsFormsApp4Birthdays
         public string Surname { get; set; }
         [XmlAttribute]
         public string Name { get; set; }
+        [XmlAttribute]
         public DateTime Birthday { get; set; }
         //public BirthDay() {}
         public void Deconstruct(out string surname, out string name, out DateTime birthday)
