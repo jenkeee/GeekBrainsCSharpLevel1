@@ -193,6 +193,10 @@ namespace WindowsFormsApp3GameEditor
             data[(int) numericUpDownNumQuestion.Value - 1].TrueFalse = checkBoxTrueFalse.Checked;
         }
 
-
+        private void miAbout_Click(object sender, EventArgs e)
+        {
+            FormAbout form = new FormAbout();
+            form.ShowDialog();
+        }
     }
 }

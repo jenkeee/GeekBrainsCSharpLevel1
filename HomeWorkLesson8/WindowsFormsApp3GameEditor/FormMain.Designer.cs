@@ -75,13 +75,14 @@
             this.panel1.Controls.Add(this.numericUpDownNumQuestion);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 343);
+            this.panel1.Location = new System.Drawing.Point(0, 344);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(643, 57);
             this.panel1.TabIndex = 4;
             // 
             // buttonSaveQuest
             // 
+            this.buttonSaveQuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSaveQuest.Location = new System.Drawing.Point(485, 6);
             this.buttonSaveQuest.Name = "buttonSaveQuest";
             this.buttonSaveQuest.Size = new System.Drawing.Size(121, 42);
@@ -92,6 +93,7 @@
             // 
             // buttonRemove
             // 
+            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRemove.Location = new System.Drawing.Point(358, 6);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(121, 42);
@@ -102,6 +104,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.Location = new System.Drawing.Point(231, 6);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(121, 42);
@@ -170,7 +173,7 @@
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxQuestion.Size = new System.Drawing.Size(643, 245);
+            this.textBoxQuestion.Size = new System.Drawing.Size(643, 246);
             this.textBoxQuestion.TabIndex = 5;
             // 
             // menuStrip1
@@ -200,40 +203,40 @@
             // miNew
             // 
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(180, 22);
+            this.miNew.Size = new System.Drawing.Size(162, 22);
             this.miNew.Text = "Новый";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // miOpen
             // 
             this.miOpen.Name = "miOpen";
-            this.miOpen.Size = new System.Drawing.Size(180, 22);
+            this.miOpen.Size = new System.Drawing.Size(162, 22);
             this.miOpen.Text = "Открыть";
             this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
             // 
             // miSave
             // 
             this.miSave.Name = "miSave";
-            this.miSave.Size = new System.Drawing.Size(180, 22);
+            this.miSave.Size = new System.Drawing.Size(162, 22);
             this.miSave.Text = "Сохранить";
             this.miSave.Click += new System.EventHandler(this.miSave_Click);
             // 
             // miSaveAs
             // 
             this.miSaveAs.Name = "miSaveAs";
-            this.miSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.miSaveAs.Size = new System.Drawing.Size(162, 22);
             this.miSaveAs.Text = "Сохранить как...";
             this.miSaveAs.Click += new System.EventHandler(this.miSaveAs_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(180, 22);
+            this.miExit.Size = new System.Drawing.Size(162, 22);
             this.miExit.Text = "Выход";
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
@@ -248,20 +251,22 @@
             // miAbout
             // 
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(161, 22);
+            this.miAbout.Size = new System.Drawing.Size(180, 22);
             this.miAbout.Text = "О программе ...";
+            this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 400);
+            this.ClientSize = new System.Drawing.Size(643, 401);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(650, 440);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Geekbrains. C# Уровень 1.";
