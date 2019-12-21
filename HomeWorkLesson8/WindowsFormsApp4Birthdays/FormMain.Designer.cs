@@ -53,6 +53,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Geekbrains. C# Уровень 1.";
+            this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.ResumeLayout(false);
 
         }
