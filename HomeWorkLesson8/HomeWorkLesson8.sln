@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp4Birthdays",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp4BirthdaysTests", "WindowsFormsApp4BirthdaysTests\WindowsFormsApp4BirthdaysTests.csproj", "{C354A181-EC28-42A4-8BD8-4EC2558DCABF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp5CSVToXML", "WindowsFormsApp5CSVToXML\WindowsFormsApp5CSVToXML.csproj", "{42612D1A-0A46-4918-8377-EAA4432F977D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C354A181-EC28-42A4-8BD8-4EC2558DCABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C354A181-EC28-42A4-8BD8-4EC2558DCABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C354A181-EC28-42A4-8BD8-4EC2558DCABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42612D1A-0A46-4918-8377-EAA4432F977D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42612D1A-0A46-4918-8377-EAA4432F977D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42612D1A-0A46-4918-8377-EAA4432F977D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42612D1A-0A46-4918-8377-EAA4432F977D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
