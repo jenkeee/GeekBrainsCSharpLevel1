@@ -62,7 +62,7 @@ namespace WindowsFormsApp4Birthdays.Tests
                 new BirthDay { Surname = "Max", Name = "Faq", Birthday = new DateTime(1980, 1, 1) },
                 new BirthDay { Surname = "Sax", Name = "Faq", Birthday = new DateTime(1980, 1, 1) },
             });
-            string[] expected = {"Alex Text 01.01.1980 0:00:00", "Max Faq 01.01.1980 0:00:00", "Sax Faq 01.01.1980 0:00:00"};
+            string[] expected = {"Alex Text 1 января 1980 г.", "Max Faq 1 января 1980 г.", "Sax Faq 1 января 1980 г."};
             string[] test = birthdays.GetStrings();
             for (int i = 0; i < expected.Length; i++)
             {

@@ -25,7 +25,6 @@ namespace WindowsFormsApp4Birthdays
         {
             this.list = list;
             this.fileName = fileName;
-            Load();
         }
         /// <summary>
         /// Добавление нового дня рождения
@@ -81,11 +80,15 @@ namespace WindowsFormsApp4Birthdays
             for (int i = 0; i < list.Count; i++)
             {
                 var (surname, name, birthday) = list[i];
-                strs[i] = $"{surname} {name} {birthday}";
+                strs[i] = $"{surname} {name} {birthday.ToString("D")}";
             }
             return strs;
         }
-
+        /// <summary>
+        /// Индексатор по дням рождения
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public BirthDay this[int index]
         {
             get => list[index];
@@ -112,7 +115,7 @@ namespace WindowsFormsApp4Birthdays
             {
                 if (MessageBox.Show("Файл дней рождений не найден, создать новый?", "Файл отстуствует", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     Save();
-                return;
+                throw new ApplicationException("Нет файла данных!");
             }
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<BirthDay>));
             using (FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
