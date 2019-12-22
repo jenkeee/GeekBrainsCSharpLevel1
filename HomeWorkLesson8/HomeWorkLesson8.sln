@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp5CSVToXML", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp6GameTrueFalse", "WindowsFormsApp6GameTrueFalse\WindowsFormsApp6GameTrueFalse.csproj", "{5D4DA603-6724-46D6-8719-8859FA6E7001}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp6GameTrueFalseTests", "WindowsFormsApp6GameTrueFalseTests\WindowsFormsApp6GameTrueFalseTests.csproj", "{0FF6C73F-557C-4293-B61C-9ADBEE444310}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5D4DA603-6724-46D6-8719-8859FA6E7001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D4DA603-6724-46D6-8719-8859FA6E7001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D4DA603-6724-46D6-8719-8859FA6E7001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

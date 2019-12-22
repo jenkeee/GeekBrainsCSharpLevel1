@@ -104,7 +104,6 @@ namespace WindowsFormsApp6GameTrueFalse
             if (currentQuestion > SIZE_QUESTION - 1)
                 mode = GameMode.End;
         }
-
         /// <summary>
         /// Установка значений на форму
         /// </summary>
