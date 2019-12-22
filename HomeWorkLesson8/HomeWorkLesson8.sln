@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp6GameTrueFal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp6GameTrueFalseTests", "WindowsFormsApp6GameTrueFalseTests\WindowsFormsApp6GameTrueFalseTests.csproj", "{0FF6C73F-557C-4293-B61C-9ADBEE444310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp7WeatherForecast", "WindowsFormsApp7WeatherForecast\WindowsFormsApp7WeatherForecast.csproj", "{840AB761-35E2-48AC-930F-64F6A0C64428}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF6C73F-557C-4293-B61C-9ADBEE444310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840AB761-35E2-48AC-930F-64F6A0C64428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840AB761-35E2-48AC-930F-64F6A0C64428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840AB761-35E2-48AC-930F-64F6A0C64428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840AB761-35E2-48AC-930F-64F6A0C64428}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
